@@ -1,0 +1,26 @@
+clc;  
+clear; 
+close all; 
+% Input values 
+V = input('Enter Voltage (Volts): '); 
+I = input('Enter Current (Amps): '); 
+t = input('Enter Time (Hours): '); 
+% Power Calculation 
+P = V * I; 
+% Energy Calculation 
+Energy = P * t; 
+% Convert to kWh 
+Energy_kWh = Energy / 1000; 
+% Display Results 
+fprintf('\nPower = %.2f Watts\n', P); 
+fprintf('Energy Consumption = %.2f Wh\n', Energy); 
+fprintf('Energy Consumption = %.3f kWh\n', Energy_kWh); 
+% Graph Plot 
+time = 1:t; 
+energy_plot = P * time; 
+figure; 
+plot(time, energy_plot, '-o'); 
+xlabel('Time (Hours)'); 
+ylabel('Energy (Wh)'); 
+title('Energy Consumption Graph'); 
+grid on; 
